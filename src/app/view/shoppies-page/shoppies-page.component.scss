@@ -33,9 +33,16 @@ input:focus {
   display: flex;
   justify-content: space-between;
 }
-app-nominations-list{
-    width: 40%;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
-app-movies-list{
-    width: 58%;
+mat-slide-toggle{
+  align-self: center;
+}
+app-nominations-list {
+  width: 40%;
+}
+app-movies-list {
+  width: 58%;
 }

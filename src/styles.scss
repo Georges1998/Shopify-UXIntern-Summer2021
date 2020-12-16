@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+
+$shoppies-app-primary: mat-palette($mat-lime,A200);
+$shoppies-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$shoppies-app-theme: mat-light-theme(
+  (
+    color: (
+      primary: $shoppies-app-primary,
+      accent: $shoppies-app-accent,
+    ),
+  )
+);
+@include angular-material-theme($shoppies-app-theme);
 html {
   font-family: "Open Sans", sans-serif;
   font-size: 62.5%;
@@ -10,5 +24,14 @@ h1 {
   font-size: 2.5rem;
   font-weight: lighter;
   padding: 0;
-  margin: 0
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

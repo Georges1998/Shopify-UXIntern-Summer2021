@@ -1,5 +1,5 @@
 .shoppies {
-  padding: 0 10px;
+  padding: 0 7px;
   font-size: 3.5rem;
   font-weight: 600;
   font-style: italic;
@@ -49,6 +49,9 @@ app-movies-list {
   margin-bottom: 2.2rem;
 }
 @media only screen and (max-width: 500px) {
+  .shoppies {
+    font-size: 2.5rem;
+  }
   app-nominations-list {
     width: 100%;
   }

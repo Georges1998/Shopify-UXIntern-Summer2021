@@ -5,11 +5,6 @@ import { ShoppiesPageComponent } from "./view/shoppies-page/shoppies-page.compon
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "shoppies",
-    pathMatch: "full",
-  },
-  {
-    path: "shoppies",
     component: ShoppiesPageComponent,
   },
 ];

@@ -1,0 +1,14 @@
+<div class="shoppies">The Shoppies</div>
+<div class="search-bar">
+  <div><h1>Movie Title</h1></div>
+  <input
+    type="search"
+    class="form-control"
+    placeholder="Search"
+    (keyup)="onSearchMovie($event)"
+  />
+</div>
+<div class="grid-view">
+  <app-movies-list [events]="eventsSubject.asObservable()"></app-movies-list>
+  <app-nominations-list></app-nominations-list>
+</div>

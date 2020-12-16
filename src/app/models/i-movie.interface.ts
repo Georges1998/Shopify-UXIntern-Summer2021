@@ -1,7 +1,8 @@
 export interface IMovie {
-  title: string;
-  year: number;
-  related: string;
-  plot: string;
-  genre: string;
+  Title: string;
+  Year: number;
+  Rated: string;
+  Plot: string;
+  Genre: string;
+  Nominated?: boolean;
 }

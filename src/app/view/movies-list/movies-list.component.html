@@ -1,0 +1,19 @@
+<div class="movies-list">
+  <h1 *ngIf="search">Search Results for " {{ search }} "</h1>
+  <div *ngIf="movies$ | async as m">
+    <div *ngIf="m.Response == 'True'">
+      <div *ngFor="let movie of m.Search">
+        {{ movie.Title }}
+        <div *ngIf="movie.Nominated">NOMINATED</div>
+        <button
+          type="submit"
+          (click)="addtoNominations(movie)"
+          *ngIf="(nominations$ | async)?.length < 5"
+        >
+          Nominate
+        </button>
+      </div>
+    </div>
+    <div *ngIf="m.Response == 'False'">{{ m.Error }}</div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="nominations-list" *ngIf="nominations$ | async as n">
+  <h1>Nominations</h1>
+  <div *ngFor="let nomination of n">
+    {{ nomination.Title }}
+    <button type="submit" (click)="remove(nomination)">Remove</button>
+  </div>
+</div>

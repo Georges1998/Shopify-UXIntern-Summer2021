@@ -1,0 +1,41 @@
+.shoppies {
+  padding: 0 10px;
+  font-size: 3.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #fff76a;
+  margin: 0.67em 0;
+}
+.search-bar {
+  width: calc(100%-20px);
+  background-color: #051021;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+input {
+  align-self: center;
+  width: 85%;
+  padding: 12px 20px;
+  margin: 0;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+.grid-view {
+  margin-top: 2.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+app-nominations-list{
+    width: 40%;
+}
+app-movies-list{
+    width: 58%;
+}

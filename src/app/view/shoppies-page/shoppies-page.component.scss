@@ -38,7 +38,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
 }
-mat-slide-toggle{
+mat-slide-toggle {
   align-self: center;
 }
 app-nominations-list {
@@ -54,5 +54,14 @@ app-movies-list {
   }
   app-movies-list {
     width: 100%;
+  }
+}
+.dark-mode {
+  align-self: center;
+  span {
+    margin-right: 10px;
+    position: relative;
+    top: 6px;
+    color: white;
   }
 }

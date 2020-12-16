@@ -32,6 +32,7 @@ input:focus {
   margin-top: 2.2rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .header {
   display: flex;
@@ -45,4 +46,13 @@ app-nominations-list {
 }
 app-movies-list {
   width: 58%;
+  margin-bottom: 2.2rem;
+}
+@media only screen and (max-width: 500px) {
+  app-nominations-list {
+    width: 100%;
+  }
+  app-movies-list {
+    width: 100%;
+  }
 }

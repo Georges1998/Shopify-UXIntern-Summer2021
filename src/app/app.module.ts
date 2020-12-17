@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MovieCardComponent } from './view/movie-card/movie-card.component';
+import { FooterComponent } from './view/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MovieCardComponent } from './view/movie-card/movie-card.component';
     NominationsListComponent,
     MoviesListComponent,
     MovieCardComponent,
+    FooterComponent,
   ],
   imports: [
     MatSliderModule,

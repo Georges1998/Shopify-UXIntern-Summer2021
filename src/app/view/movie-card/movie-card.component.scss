@@ -37,6 +37,7 @@ button:hover {
 }
 
 button:disabled {
+  cursor: default;
   color: #083378;
   border: solid 1px #083378;
 }

@@ -1,0 +1,23 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 86%;
+  margin: 0 auto;
+  background-color: #051021;
+  color: white;
+  text-align: center;
+  align-items: center;
+  span {
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    top: 7px;
+    left: 10px;
+  }
+  span:hover {
+    cursor: pointer;
+  }
+  a{
+      color:white
+  }
+}

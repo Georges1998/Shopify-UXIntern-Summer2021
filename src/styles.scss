@@ -2,7 +2,7 @@
 @import "~@angular/material/theming";
 @include mat-core();
 
-$shoppies-app-primary: mat-palette($mat-lime,A200);
+$shoppies-app-primary: mat-palette($mat-lime, A200);
 $shoppies-app-accent: mat-palette($mat-pink, A200, A100, A400);
 $shoppies-app-theme: mat-light-theme(
   (
@@ -22,9 +22,18 @@ html {
 }
 h1 {
   font-size: 2.5rem;
+  font-family: "Open Sans", sans-serif;
   font-weight: lighter;
   padding: 0;
   margin: 0;
+}
+h2 {
+  font-family: "Open Sans", sans-serif;
+}
+h3 {
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-family: "Open Sans", sans-serif;
 }
 
 html,
@@ -37,6 +46,6 @@ body {
 }
 @media only screen and (max-width: 500px) {
   h1 {
-    font-size: 2.0rem;
+    font-size: 2rem;
   }
 }

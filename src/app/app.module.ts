@@ -13,6 +13,7 @@ import { MoviesListComponent } from "./view/movies-list/movies-list.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MovieCardComponent } from './view/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     ShoppiesPageComponent,
     NominationsListComponent,
     MoviesListComponent,
+    MovieCardComponent,
   ],
   imports: [
     MatSliderModule,

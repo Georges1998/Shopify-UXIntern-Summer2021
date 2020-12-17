@@ -1,0 +1,40 @@
+.movie-card {
+  padding: 0 20px;
+  width: calc(100%-40px);
+  margin: 10px 0;
+  background-color: #030b17;
+  display: flex;
+  justify-content: space-between;
+}
+.movie-badge {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  span {
+    align-self: center;
+    color: #fff76a;
+    margin-right: 10px;
+  }
+}
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: solid 1px #fff76a;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition-duration: 1s;
+  outline: none;
+}
+button:hover {
+  color: #fff76a;
+}
+
+button:disabled {
+  color: #083378;
+  border: solid 1px #083378;
+}

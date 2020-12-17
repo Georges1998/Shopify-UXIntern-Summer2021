@@ -3,15 +3,13 @@
   <div *ngIf="movies$ | async as m">
     <div *ngIf="m.Response == 'True'">
       <div *ngFor="let movie of m.Search">
-        {{ movie.Title }}
+        <app-movie-card
+          [movie]="movie"
+          (pressed)="addtoNominations(movie)"
+          [buttonAction]="'Nominate'"
+          [disable]="(nominations$ | async)?.length >= 5"
+        ></app-movie-card>
         <div *ngIf="movie.Nominated">NOMINATED</div>
-        <button
-          type="submit"
-          (click)="addtoNominations(movie)"
-          *ngIf="(nominations$ | async)?.length < 5"
-        >
-          Nominate
-        </button>
       </div>
     </div>
     <div *ngIf="m.Response == 'False'">{{ m.Error }}</div>

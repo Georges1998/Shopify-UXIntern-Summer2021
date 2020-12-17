@@ -1,0 +1,9 @@
+<div class="movie-card">
+  <div class="movie-badge">
+    <span *ngIf="movie.Nominated" class="material-icons">grade</span>
+    <h2>{{ movie.Title }} {{ movie.Year }}</h2>
+  </div>
+  <button [disabled]="disable || movie.Nominated" (click)="toggle()">
+    {{ buttonAction }}
+  </button>
+</div>

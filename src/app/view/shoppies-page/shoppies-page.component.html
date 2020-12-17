@@ -1,9 +1,14 @@
-<div style="min-height: calc(100vh - 50px);">
+<div style="min-height: calc(100vh - 50px)">
   <div class="header">
     <div class="shoppies">The Shoppies</div>
     <div class="dark-mode">
-      <span class="material-icons"> nights_stay </span>
-      <mat-slide-toggle color="primary" [(ngModel)]="checked" (change)="changed()"></mat-slide-toggle>
+      <span class="material-icons" *ngIf="!checked"> nights_stay </span>
+      <span class="material-icons" *ngIf="checked"> wb_sunny </span>
+      <mat-slide-toggle
+        color="primary"
+        [(ngModel)]="checked"
+        (change)="changed()"
+      ></mat-slide-toggle>
     </div>
   </div>
   <div class="search-bar">
@@ -16,7 +21,10 @@
     />
   </div>
   <div class="grid-view">
-    <app-movies-list [events]="eventsSubject.asObservable()"></app-movies-list>
-    <app-nominations-list></app-nominations-list>
+    <app-movies-list
+      [events]="eventsSubject.asObservable()"
+      [lightTheme]="checked"
+    ></app-movies-list>
+    <app-nominations-list [lightTheme]="checked"></app-nominations-list>
   </div>
 </div>

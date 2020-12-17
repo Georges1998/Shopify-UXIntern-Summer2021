@@ -68,7 +68,6 @@ export class MovieState {
           ...state,
           movie: res,
         });
-        console.log(res);
       }),
       catchError((err: HttpErrorResponse) => {
         alert("Please try again.");
@@ -114,7 +113,6 @@ export class MovieState {
     const nominations = ctx.getState().nominations;
     const movies = ctx.getState().movies;
     const nominationsLimit = ctx.getState().nominationsLimit;
-    console.log(nominationsLimit);
     const objIndex = movies.Search.findIndex(
       (obj) => obj.Title == action.payload.movie.Title
     );
@@ -125,7 +123,6 @@ export class MovieState {
       movies: movies,
       nominationsLimit: nominationsLimit + 1,
     });
-    console.log(nominations);
   }
 
   @Action(DeleteFromNominations)
@@ -150,6 +147,5 @@ export class MovieState {
       movies: movies,
       nominationsLimit: nominationsLimit - 1,
     });
-    console.log(nominations);
   }
 }

@@ -1,2 +1,7 @@
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div
+  class="app"
+  [ngClass]="{ 'app-dark': themeDark, 'app-light': !themeDark }"
+>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>

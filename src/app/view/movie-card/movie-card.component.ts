@@ -17,7 +17,6 @@ export class MovieCardComponent implements OnInit {
 
   showMore: boolean = false;
   ngOnInit(): void {
-    console.log(this.disable);
   }
 
   toggle() {
@@ -25,6 +24,5 @@ export class MovieCardComponent implements OnInit {
   }
   expandCard() {
     this.showMore = !this.showMore;
-    console.log(this.showMore);
   }
 }

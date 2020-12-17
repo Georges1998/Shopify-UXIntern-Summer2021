@@ -3,7 +3,7 @@
     <div class="shoppies">The Shoppies</div>
     <div class="dark-mode">
       <span class="material-icons"> nights_stay </span>
-      <mat-slide-toggle color="primary"></mat-slide-toggle>
+      <mat-slide-toggle color="primary" [(ngModel)]="checked" (change)="changed()"></mat-slide-toggle>
     </div>
   </div>
   <div class="search-bar">

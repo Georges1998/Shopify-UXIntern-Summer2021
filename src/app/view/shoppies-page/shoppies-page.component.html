@@ -1,20 +1,22 @@
-<div class="header">
-  <div class="shoppies">The Shoppies</div>
-  <div class="dark-mode">
-    <span class="material-icons"> nights_stay </span>
-    <mat-slide-toggle color="primary"></mat-slide-toggle>
+<div style="min-height: calc(100vh - 50px);">
+  <div class="header">
+    <div class="shoppies">The Shoppies</div>
+    <div class="dark-mode">
+      <span class="material-icons"> nights_stay </span>
+      <mat-slide-toggle color="primary"></mat-slide-toggle>
+    </div>
   </div>
-</div>
-<div class="search-bar">
-  <h1 style="align-self:center;">Movie Title</h1>
-  <input
-    type="search"
-    class="form-control"
-    placeholder="Search"
-    (keyup)="onSearchMovie($event)"
-  />
-</div>
-<div class="grid-view">
-  <app-movies-list [events]="eventsSubject.asObservable()"></app-movies-list>
-  <app-nominations-list></app-nominations-list>
+  <div class="search-bar">
+    <h1 style="align-self: center">Movie Title</h1>
+    <input
+      type="search"
+      class="form-control"
+      placeholder="Search"
+      (keyup)="onSearchMovie($event)"
+    />
+  </div>
+  <div class="grid-view">
+    <app-movies-list [events]="eventsSubject.asObservable()"></app-movies-list>
+    <app-nominations-list></app-nominations-list>
+  </div>
 </div>

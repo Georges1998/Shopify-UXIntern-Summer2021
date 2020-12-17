@@ -3,7 +3,10 @@
     <span *ngIf="movie.Nominated" class="material-icons">grade</span>
     <h2>{{ movie.Title }} {{ movie.Year }}</h2>
   </div>
-  <button [disabled]="disable || movie.Nominated" (click)="toggle()">
+  <button
+    [disabled]="disable || (movie.Nominated && buttonAction == 'Nominate')"
+    (click)="toggle()"
+  >
     {{ buttonAction }}
   </button>
 </div>

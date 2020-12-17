@@ -1,4 +1,5 @@
 <div class="movies-list">
+  <h1 *ngIf="!search">Search for Movies to Nominate</h1>
   <h1 *ngIf="search">Search Results for " {{ search }} "</h1>
   <div *ngIf="movies$ | async as m">
     <div *ngIf="m.Response == 'True'">
@@ -12,7 +13,7 @@
       </div>
     </div>
     <div *ngIf="m.Response == 'False'">
-      <h2>{{ m.Error }}</h2>
+      <h2 style="color: red;" *ngIf="m.Error!='Incorrect IMDb ID.'">{{ m.Error }}</h2>
     </div>
   </div>
 </div>

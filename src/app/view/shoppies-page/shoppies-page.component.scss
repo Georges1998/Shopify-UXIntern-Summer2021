@@ -45,7 +45,7 @@ app-nominations-list {
   width: 40%;
 }
 app-movies-list {
-  width: 58%;
+  width: calc(60% - 22px);
 }
 @media only screen and (max-width: 500px) {
   .shoppies {

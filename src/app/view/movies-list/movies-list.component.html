@@ -9,9 +9,10 @@
           [buttonAction]="'Nominate'"
           [disable]="(nominations$ | async)?.length >= 5"
         ></app-movie-card>
-        <div *ngIf="movie.Nominated">NOMINATED</div>
       </div>
     </div>
-    <div *ngIf="m.Response == 'False'">{{ m.Error }}</div>
+    <div *ngIf="m.Response == 'False'">
+      <h2>{{ m.Error }}</h2>
+    </div>
   </div>
 </div>

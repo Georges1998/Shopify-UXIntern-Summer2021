@@ -17,6 +17,7 @@
   }
 }
 button {
+  align-self: center;
   background-color: rgba(0, 0, 0, 0);
   border: solid 1px #fff76a;
   color: rgb(255, 255, 255);
@@ -25,6 +26,7 @@ button {
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
+  height: 40px;
   cursor: pointer;
   border-radius: 16px;
   transition-duration: 1s;

@@ -16,7 +16,6 @@ export class NominationsListComponent implements OnInit {
   ngOnInit(): void {}
 
   remove(m: IMovie) {
-    this.store.dispatch(new movieActions.DeleteFromNominations({ movie: m}));
-    console.log(m);
+    this.store.dispatch(new movieActions.DeleteFromNominations({ movie: m }));
   }
 }

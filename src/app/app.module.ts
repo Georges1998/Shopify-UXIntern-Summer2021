@@ -15,6 +15,7 @@ import { MatSliderModule } from "@angular/material/slider";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MovieCardComponent } from './view/movie-card/movie-card.component';
 import { FooterComponent } from './view/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FooterComponent } from './view/footer/footer.component';
     FooterComponent,
   ],
   imports: [
+    FormsModule,
     MatSliderModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Subject } from "rxjs";
+import { DarkModeService } from "src/app/services/dark-mode.service";
 
 @Component({
   selector: "app-shoppies-page",
@@ -8,11 +9,15 @@ import { Subject } from "rxjs";
 })
 export class ShoppiesPageComponent implements OnInit {
   eventsSubject: Subject<void> = new Subject<void>();
+  checked = false;
 
-  constructor() {}
+  constructor(private darkMode: DarkModeService) {}
   ngOnInit(): void {}
 
   onSearchMovie(event: any) {
     this.eventsSubject.next(event.target.value);
+  }
+  changed(){
+    this.darkMode.toggleDarkMode();
   }
 }

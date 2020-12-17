@@ -35,9 +35,26 @@ button {
 button:hover {
   color: #fff76a;
 }
+.show-more {
+  align-self: flex-start;
+}
 
 button:disabled {
   cursor: default;
   color: #083378;
   border: solid 1px #083378;
 }
+img {
+  display: none;
+  transition-duration: 1s;
+}
+.show-img {
+  display: block;
+  position: relative;
+  width: 150px;
+}
+
+.expand:hover {
+  cursor: pointer;
+}
+

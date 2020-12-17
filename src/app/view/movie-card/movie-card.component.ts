@@ -15,11 +15,16 @@ export class MovieCardComponent implements OnInit {
 
   @Output() pressed: EventEmitter<any> = new EventEmitter();
 
+  showMore: boolean = false;
   ngOnInit(): void {
-    console.log(this.disable)
+    console.log(this.disable);
   }
 
   toggle() {
     this.pressed.emit(null);
+  }
+  expandCard() {
+    this.showMore = !this.showMore;
+    console.log(this.showMore);
   }
 }

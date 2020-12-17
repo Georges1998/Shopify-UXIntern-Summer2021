@@ -2,7 +2,16 @@
   min-height: 40vh;
   margin-bottom: 2.2rem;
   width: calc(100%-20px);
+  padding: 10px;
+  transition-timing-function: ease-in;
+}
+
+.movie-list-light {
+  background-color: #e8ecff;
+  color: #051021;
+}
+
+.movie-list-dark {
   background-color: #051021;
   color: white;
-  padding: 10px;
 }

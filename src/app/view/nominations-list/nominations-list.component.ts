@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Select, Store } from "@ngxs/store";
 import { Observable } from "rxjs";
 import { IMovie } from "src/app/models/i-movie.interface";
@@ -14,7 +14,8 @@ export class NominationsListComponent implements OnInit {
   constructor(private store: Store) {}
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
   ngOnInit(): void {}
-
+  @Input() lightTheme: boolean = false;
+  
   remove(m: IMovie) {
     this.store.dispatch(new movieActions.DeleteFromNominations({ movie: m }));
   }

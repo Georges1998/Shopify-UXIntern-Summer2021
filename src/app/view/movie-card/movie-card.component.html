@@ -1,4 +1,4 @@
-<div class="movie-card">
+<div class="movie-card" [ngClass]="{ 'movie-card-light': lightTheme, 'movie-card-dark': !lightTheme }">
   <div>
     <div class="movie-badge" [ngClass]="{ 'show-more': showMore }">
       <span *ngIf="movie.Nominated" class="material-icons">grade</span>

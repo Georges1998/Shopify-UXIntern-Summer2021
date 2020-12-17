@@ -4,6 +4,7 @@ import { Observable, Subscription } from "rxjs";
 import { IMovie } from "src/app/models/i-movie.interface";
 import { IResponse } from "src/app/models/i-response.interface";
 import { Movie } from "src/app/models/movie.class";
+import { DarkModeService } from "src/app/services/dark-mode.service";
 import {
   AddToNominations,
   SearchMovieByTitle,
@@ -20,10 +21,11 @@ export class MoviesListComponent implements OnInit {
 
   search;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private darkMode: DarkModeService) {}
   @Input() events: Observable<void>;
   @Select(MovieState.movies) movies$: Observable<IResponse<IMovie>>;
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
+  @Input() lightTheme: boolean = true;
 
   ngOnInit() {
     this.eventsSubscription = this.events.subscribe((e) => {

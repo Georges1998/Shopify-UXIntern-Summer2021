@@ -12,12 +12,12 @@ export class MovieCardComponent implements OnInit {
   @Input() movie: Movie;
   @Input() disable: boolean = false;
   @Input() buttonAction: string;
+  @Input() lightTheme: boolean = false;
 
   @Output() pressed: EventEmitter<any> = new EventEmitter();
 
   showMore: boolean = false;
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   toggle() {
     this.pressed.emit(null);

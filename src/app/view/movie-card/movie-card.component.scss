@@ -15,11 +15,12 @@
     color: #fff76a;
     margin-right: 10px;
   }
+
+  transition-duration: 0.5s;
 }
 button {
   align-self: center;
-  background-color: rgba(0, 0, 0, 0);
-  border: solid 1px #fff76a;
+
   color: rgb(255, 255, 255);
   padding: 10px 20px;
   text-align: center;
@@ -41,8 +42,6 @@ button:hover {
 
 button:disabled {
   cursor: default;
-  color: #083378;
-  border: solid 1px #083378;
 }
 img {
   display: none;
@@ -57,4 +56,36 @@ img {
 .expand:hover {
   cursor: pointer;
 }
+.movie-card-light {
+  background-color: #ffffff;
+  color: #051021;
+  button {
+    background-color: #fff86a59;
+    border: solid 1px #fff76a;
+    color: #051021;
+  }
+  button:disabled {
+    background-color: #dfdfdf;
+    color: #838383;
+    border: solid 1px #ffffff;
+  }
+  .movie-badge {
+    span {
+      color: #2ca852;
+    }
+  }
+}
 
+.movie-card-dark {
+  background-color: #051021;
+  color: white;
+  button {
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #fff76a;
+  }
+  button:disabled {
+    cursor: default;
+    color: #083378;
+    border: solid 1px #083378;
+  }
+}

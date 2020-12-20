@@ -12,11 +12,14 @@ import { NominationsListComponent } from "./view/nominations-list/nominations-li
 import { MoviesListComponent } from "./view/movies-list/movies-list.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from "@angular/material/slider";
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { MovieCardComponent } from './view/movie-card/movie-card.component';
-import { FooterComponent } from './view/footer/footer.component';
-import { FormsModule } from '@angular/forms';
-
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { MovieCardComponent } from "./view/movie-card/movie-card.component";
+import { FooterComponent } from "./view/footer/footer.component";
+import { FormsModule } from "@angular/forms";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { DialogueViewComponent } from "./view/dialogue-view/dialogue-view.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +28,12 @@ import { FormsModule } from '@angular/forms';
     MoviesListComponent,
     MovieCardComponent,
     FooterComponent,
+    DialogueViewComponent,
   ],
   imports: [
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
     FormsModule,
     MatSliderModule,
     MatSlideToggleModule,

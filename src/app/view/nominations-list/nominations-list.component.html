@@ -1,4 +1,11 @@
-<div class="nominations-list" *ngIf="nominations$ | async as n" [ngClass]="{ 'nominations-list-light': lightTheme, 'nominations-list-dark': !lightTheme }">
+<div
+  class="nominations-list"
+  *ngIf="nominations$ | async as n"
+  [ngClass]="{
+    'nominations-list-light': lightTheme,
+    'nominations-list-dark': !lightTheme
+  }"
+>
   <h1>Nominations</h1>
   <div *ngFor="let nomination of n">
     <app-movie-card

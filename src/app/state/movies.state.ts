@@ -114,7 +114,9 @@ export class MovieState {
     const movies = ctx.getState().movies;
     const nominationsLimit = ctx.getState().nominationsLimit;
     const objIndex = movies.Search.findIndex(
-      (obj) => obj.Title == action.payload.movie.Title
+      (obj) =>
+        obj.Title == action.payload.movie.Title &&
+        obj.Year == action.payload.movie.Year
     );
     movies.Search[objIndex].Nominated = true;
     nominations.push(action.payload.movie);
@@ -139,11 +141,19 @@ export class MovieState {
     }
     const nominations = ctx.getState().nominations;
     const nominationsLimit = ctx.getState().nominationsLimit;
+    const objIndex = nominations.findIndex(
+      (obj) =>
+        obj.Title == action.payload.movie.Title &&
+        obj.Year == action.payload.movie.Year
+    );
+    if (objIndex > -1) {
+      nominations.splice(objIndex, 1);
+    }
     const newNominations = nominations.filter(function (e) {
       return e.Title != action.payload.movie.Title;
     });
     ctx.patchState({
-      nominations: newNominations,
+      nominations: nominations,
       movies: movies,
       nominationsLimit: nominationsLimit - 1,
     });

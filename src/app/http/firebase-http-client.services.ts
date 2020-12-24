@@ -16,7 +16,7 @@ export class FirebaseHttpClientService {
   createLink(movies: IMovie[]) {
     var utc = new Date();
     var link: ILink = { date: utc };
-    this.firestore
+    return this.firestore
       .collection("sharedLink")
       .add(link)
       .then((e) => {
@@ -28,7 +28,6 @@ export class FirebaseHttpClientService {
         });
         // this.dialog.open(DialogElementsExampleDialog);
       });
-    return;
   }
 
   getUsers(id) {

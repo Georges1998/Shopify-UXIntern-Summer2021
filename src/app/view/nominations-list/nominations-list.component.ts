@@ -7,6 +7,8 @@ import { IMovie } from "src/app/models/i-movie.interface";
 import { MovieState } from "src/app/state/movies.state";
 import * as movieActions from "../../state/movies.actions";
 import { DialogueViewComponent } from "../dialogue-view/dialogue-view.component";
+import { ClipboardService } from "ngx-clipboard";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-nominations-list",
@@ -17,7 +19,9 @@ export class NominationsListComponent implements OnInit {
   constructor(
     private store: Store,
     private _snackBar: MatSnackBar,
-    private firebase: FirebaseHttpClientService
+    private firebase: FirebaseHttpClientService,
+    private clipboardService: ClipboardService,
+    private router: Router
   ) {}
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
   @Input() lightTheme: boolean = false;
@@ -41,10 +45,14 @@ export class NominationsListComponent implements OnInit {
     });
   }
   createLink() {
+    console.log(window.location.href);
     var nominationsList = [];
     this.nominations$.subscribe((e) => {
       nominationsList = e;
     });
-    this.firebase.createLink(nominationsList);
+    this.firebase.createLink(nominationsList).then(() => {
+      this.clipboardService.copyFromContent(window.location.href);
+      this._snackBar.open("Link copied","Close");
+    });
   }
 }

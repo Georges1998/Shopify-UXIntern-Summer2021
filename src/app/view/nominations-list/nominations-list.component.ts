@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Select, Store } from "@ngxs/store";
 import { Observable } from "rxjs";
+import { FirebaseHttpClientService } from "src/app/http/firebase-http-client.services";
 import { IMovie } from "src/app/models/i-movie.interface";
 import { MovieState } from "src/app/state/movies.state";
 import * as movieActions from "../../state/movies.actions";
@@ -13,7 +14,11 @@ import { DialogueViewComponent } from "../dialogue-view/dialogue-view.component"
   styleUrls: ["./nominations-list.component.scss"],
 })
 export class NominationsListComponent implements OnInit {
-  constructor(private store: Store, private _snackBar: MatSnackBar) {}
+  constructor(
+    private store: Store,
+    private _snackBar: MatSnackBar,
+    private firebase: FirebaseHttpClientService
+  ) {}
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
   @Input() lightTheme: boolean = false;
   @Select(MovieState.nominationsLimit) nominationsLimit$: Observable<number>;
@@ -31,7 +36,15 @@ export class NominationsListComponent implements OnInit {
   }
   openSnackBar() {
     this._snackBar.openFromComponent(DialogueViewComponent, {
-      duration: this.durationInSeconds * 1000,panelClass: ['blue-snackbar']
+      duration: this.durationInSeconds * 1000,
+      panelClass: ["blue-snackbar"],
     });
+  }
+  createLink() {
+    var nominationsList = [];
+    this.nominations$.subscribe((e) => {
+      nominationsList = e;
+    });
+    this.firebase.createLink(nominationsList);
   }
 }

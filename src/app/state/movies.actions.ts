@@ -1,4 +1,3 @@
-import { exhaustMap } from "rxjs/operators";
 import { IMovie } from "../models/i-movie.interface";
 
 export class GetMovieByTitle {
@@ -14,6 +13,11 @@ export class SearchMovieByTitle {
 export class AddToNominations {
   static readonly type = "[MOVIE] Add to Nominations";
   constructor(public payload: { movie: IMovie }) {}
+}
+
+export class GetNominationsFromLink {
+  static readonly type = "[MOVIE] Get Nominations";
+  constructor(public payload: { id: string }) {}
 }
 
 export class DeleteFromNominations {

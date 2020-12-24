@@ -20,6 +20,11 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { DialogueViewComponent } from "./view/dialogue-view/dialogue-view.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { environment } from "src/environments/environment";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,9 @@ import { MatInputModule } from "@angular/material/input";
     DialogueViewComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,

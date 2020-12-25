@@ -16,8 +16,9 @@
       [disable]="false"
     ></app-movie-card>
   </div>
-  <button (click)="createLink()"
->
-  Share
-</button>
+  <div class=" button-div">
+    <button (click)="createLink()" *ngIf="n.length>0">
+      {{ button }}
+    </button>
+  </div>
 </div>

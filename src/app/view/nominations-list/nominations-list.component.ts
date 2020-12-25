@@ -27,6 +27,7 @@ export class NominationsListComponent implements OnInit {
   @Input() lightTheme: boolean = false;
   @Select(MovieState.nominationsLimit) nominationsLimit$: Observable<number>;
   durationInSeconds = 5;
+  button = "Generate new link to share with friends";
   ngOnInit(): void {
     this.nominationsLimit$.subscribe((res) => {
       if (res >= 5) {
@@ -52,7 +53,11 @@ export class NominationsListComponent implements OnInit {
     });
     this.firebase.createLink(nominationsList).then(() => {
       this.clipboardService.copyFromContent(window.location.href);
-      this._snackBar.open("Link copied","Close");
+      this._snackBar.open(
+        "Link was automatically copied: " + window.location.href,
+        "Close",
+        { panelClass: ["blue-snackbar"] }
+      );
     });
   }
 }

@@ -4,7 +4,7 @@
 
 # The Shoppies
 
-An app that manages movie nominations for the upcoming Shoppies. Built with **Angular** and **Firebase**.
+An app that manages movie nominations for the upcoming Shoppies. Built with **Angular** and **Cloud Firestore**.
 
 ## <a name='Demo'></a> Demo
 
@@ -16,13 +16,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### <a name='Installing'></a> Instructions
 
-1. First, clone this repo using Git
+1. First, clone this repo using Git.
 
 ```bash
 git clone https://github.com/Georges1998/Shopify-UXIntern-Summer2021.git
 ```
 
-2. Navigate to the project root folder and use this **npm** command to install the dependencies
+2. Navigate to the project root folder and use this **npm** command to install the dependencies.
 
 ```bash
 npm install

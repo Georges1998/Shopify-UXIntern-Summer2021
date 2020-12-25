@@ -1,14 +1,17 @@
-<div class="movies-list" [ngClass]="{ 'movie-list-light': lightTheme, 'movie-list-dark': !lightTheme }">
+<div
+  class="movies-list"
+  [ngClass]="{ 'movie-list-light': lightTheme, 'movie-list-dark': !lightTheme }"
+>
   <h1 *ngIf="!search">Search for Movies to Nominate</h1>
   <h1 *ngIf="search">Search Results for " {{ search }} "</h1>
   <div *ngIf="movies$ | async as m">
     <div *ngIf="m.Response == 'True'">
       <div *ngFor="let movie of m.Search">
         <app-movie-card
+          [lightTheme]="lightTheme"
           [movie]="movie"
           (pressed)="addtoNominations(movie)"
           [buttonAction]="'Nominate'"
-          [lightTheme]="lightTheme"
           [disable]="(nominations$ | async)?.length >= 5"
         ></app-movie-card>
       </div>

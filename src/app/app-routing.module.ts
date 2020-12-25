@@ -7,13 +7,15 @@ const routes: Routes = [
   {
     path: "",
     component: ShoppiesPageComponent,
-  },
-  {
-    path: ":id",
-    component: ShoppiesPageComponent,
-    resolve: {
-      movie: MovieResolver,
-    },
+    children: [
+      {
+        path: ":id",
+        component: ShoppiesPageComponent,
+        resolve: {
+          movie: MovieResolver,
+        },
+      },
+    ],
   },
 ];
 

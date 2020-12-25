@@ -26,7 +26,6 @@ export class FirebaseHttpClientService {
             .add(m);
           this.router.navigate([`./${e.id}`]);
         });
-        // this.dialog.open(DialogElementsExampleDialog);
       });
   }
 
@@ -53,7 +52,6 @@ export class FirebaseHttpClientService {
           this.router.navigate(["./"]);
         }
       });
-    // return this.firestore.collection("sharedLink").doc(id).get();
     return this.firestore
       .collection("sharedLink")
       .doc(id)

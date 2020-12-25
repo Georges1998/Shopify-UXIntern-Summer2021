@@ -1,6 +1,6 @@
 <div
   class="app"
-  [ngClass]="{ 'app-dark': themeDark, 'app-light': !themeDark }"
+  [ngClass]="{ 'app-dark': !lightTheme, 'app-light': lightTheme }"
 >
   <router-outlet></router-outlet>
   <app-footer></app-footer>

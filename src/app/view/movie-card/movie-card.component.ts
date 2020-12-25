@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Movie } from "src/app/models/movie.class";
+import { DarkModeService } from "src/app/services/dark-mode.service";
 
 @Component({
   selector: "app-movie-card",
@@ -7,12 +8,12 @@ import { Movie } from "src/app/models/movie.class";
   styleUrls: ["./movie-card.component.scss"],
 })
 export class MovieCardComponent implements OnInit {
-  constructor() {}
+  constructor(private darkMode: DarkModeService) {}
 
   @Input() movie: Movie;
   @Input() disable: boolean = false;
   @Input() buttonAction: string;
-  @Input() lightTheme: boolean = false;
+  @Input() lightTheme: boolean;
 
   @Output() pressed: EventEmitter<any> = new EventEmitter();
 

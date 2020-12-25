@@ -9,15 +9,14 @@ import { DarkModeService } from "./services/dark-mode.service";
 })
 export class AppComponent {
   title = "shoppies";
-  themeDark: boolean = true;
+  lightTheme: boolean;
   private eventsSubscription: Subscription;
   events: Observable<boolean>;
   constructor(private darkMode: DarkModeService) {}
 
   ngOnInit() {
-    this.events = this.darkMode.getMode().asObservable();
-    this.eventsSubscription = this.events.subscribe((e) => {
-      this.themeDark = e;
+    this.darkMode.getMode().subscribe((e) => {
+      this.lightTheme = e;
     });
   }
   ngOnDestroy() {

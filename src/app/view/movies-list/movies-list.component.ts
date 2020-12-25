@@ -25,12 +25,15 @@ export class MoviesListComponent implements OnInit {
   @Input() events: Observable<void>;
   @Select(MovieState.movies) movies$: Observable<IResponse<IMovie>>;
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
-  @Input() lightTheme: boolean = true;
+  lightTheme: boolean;
 
   ngOnInit() {
     this.eventsSubscription = this.events.subscribe((e) => {
       this.search = e;
       this.store.dispatch(new SearchMovieByTitle({ title: this.search }));
+    });
+    this.darkMode.getMode().subscribe((e) => {
+      this.lightTheme = e;
     });
   }
   ngOnDestroy() {

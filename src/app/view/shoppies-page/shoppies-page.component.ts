@@ -9,15 +9,20 @@ import { DarkModeService } from "src/app/services/dark-mode.service";
 })
 export class ShoppiesPageComponent implements OnInit {
   eventsSubject: Subject<void> = new Subject<void>();
-  checked = false;
+  checked;
 
   constructor(private darkMode: DarkModeService) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.darkMode.getMode().subscribe((e) => {
+      this.checked = e;
+    });
+  }
 
   onSearchMovie(event: any) {
     this.eventsSubject.next(event.target.value);
   }
-  changed(){
+  changed() {
     this.darkMode.toggleDarkMode();
+    console.log(this.checked);
   }
 }

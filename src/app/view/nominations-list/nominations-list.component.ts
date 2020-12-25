@@ -8,7 +8,7 @@ import { MovieState } from "src/app/state/movies.state";
 import * as movieActions from "../../state/movies.actions";
 import { DialogueViewComponent } from "../dialogue-view/dialogue-view.component";
 import { ClipboardService } from "ngx-clipboard";
-import { Router } from "@angular/router";
+import { DarkModeService } from "src/app/services/dark-mode.service";
 
 @Component({
   selector: "app-nominations-list",
@@ -21,14 +21,18 @@ export class NominationsListComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private firebase: FirebaseHttpClientService,
     private clipboardService: ClipboardService,
-    private router: Router
+    private darkMode: DarkModeService
   ) {}
   @Select(MovieState.nominations) nominations$: Observable<Array<IMovie>>;
-  @Input() lightTheme: boolean = false;
+  lightTheme: boolean;
   @Select(MovieState.nominationsLimit) nominationsLimit$: Observable<number>;
   durationInSeconds = 5;
   button = "Generate new link to share with friends";
   ngOnInit(): void {
+    this.darkMode.getMode().subscribe((e) => {
+      this.lightTheme = e;
+    });
+
     this.nominationsLimit$.subscribe((res) => {
       if (res >= 5) {
         this.openSnackBar();
@@ -46,7 +50,6 @@ export class NominationsListComponent implements OnInit {
     });
   }
   createLink() {
-    console.log(window.location.href);
     var nominationsList = [];
     this.nominations$.subscribe((e) => {
       nominationsList = e;

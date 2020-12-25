@@ -35,7 +35,6 @@ export class MovieResolver implements Resolve<IMovie> {
             return { error: v };
           }
           const dataState = this.store.selectSnapshot(MovieState);
-          console.log(dataState.link);
           return dataState.link;
         })
       );

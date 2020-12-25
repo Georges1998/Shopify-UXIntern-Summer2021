@@ -124,7 +124,6 @@ export class MovieState {
   ) {
     const state = ctx.getState();
     var nominations: Array<IMovie> = ctx.getState().nominations;
-    console.log("HIIII");
 
     return this.firebaseHttpClient
       .getLinkById(action.payload.id)
@@ -139,11 +138,7 @@ export class MovieState {
           nominations: n,
           nominationsLimit: n.length,
         });
-        console.log(ctx.getState().link);
-
-        // console.log(e.data());
       });
-    console.log("HIIII");
   }
   @Action(AddToNominations)
   AddToNominations(
@@ -173,17 +168,13 @@ export class MovieState {
     action: DeleteFromNominations
   ) {
     const movies = ctx.getState().movies;
-    console.log(movies);
     if (movies?.totalResults > 0) {
-      console.log("INSIDE THE LOOP");
       const obj = movies.Search.find(
         (o) =>
           o.Title == action.payload.movie.Title &&
           o.Year == action.payload.movie.Year
       );
-      console.log(obj);
       if (obj != null) {
-        console.log("LOLOLO");
         obj.Nominated = false;
       }
     }
@@ -196,7 +187,6 @@ export class MovieState {
     );
     if (objIndex > -1) {
       nominations[objIndex].Nominated = false;
-      console.log(nominations[objIndex].Nominated);
       nominations.splice(objIndex, 1);
     }
     const newNominations = nominations.filter(function (e) {

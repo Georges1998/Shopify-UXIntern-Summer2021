@@ -1,6 +1,7 @@
 <div style="min-height: calc(100vh - 50px)">
   <div class="header">
     <div class="shoppies">THE SHOPPIES</div>
+
     <div class="dark-mode">
       <span class="material-icons" *ngIf="!checked"> nights_stay </span>
       <span class="material-icons" *ngIf="checked"> wb_sunny </span>
@@ -11,19 +12,18 @@
       ></mat-slide-toggle>
     </div>
   </div>
+  <div class="subtitle">Nominate up to 5 movies and share with friends!</div>
   <div class="search-bar">
     <h1 style="align-self: center">Movie Title</h1>
     <input
       type="search"
       class="form-control"
-      placeholder="Search ex: Frozen"
+      placeholder="Search for movies..."
       (keyup)="onSearchMovie($event)"
     />
   </div>
   <div class="grid-view">
-    <app-movies-list
-      [events]="eventsSubject.asObservable()"
-    ></app-movies-list>
+    <app-movies-list [events]="eventsSubject.asObservable()"></app-movies-list>
     <app-nominations-list></app-nominations-list>
   </div>
 </div>

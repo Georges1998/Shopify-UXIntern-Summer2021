@@ -1,27 +1,52 @@
-# Shoppies
+<p align="center">
+<img width="271" alt="Screen Shot 2020-12-24 at 8 44 29 PM" src="https://user-images.githubusercontent.com/46607090/103113557-4333be00-4629-11eb-80d2-ac46db9da89f.png">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+# The Shoppies
+
+An app that manages movie nominations for the upcoming Shoppies. Built with **Angular** and **Cloud Firestore**.
+
+## <a name='Demo'></a> Demo
+
+Hosted by Netlify: [Demo](https://george-kandalaft-shopify-challenge.netlify.app/)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### <a name='Installing'></a> Instructions
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. First, clone this repo using Git.
 
-## Build
+```bash
+git clone https://github.com/Georges1998/Shopify-UXIntern-Summer2021.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Navigate to the project root folder and use this **npm** command to install the dependencies.
 
-## Running unit tests
+```bash
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Start the Parcel bundler to run the project on localhost:4200.
 
-## Running end-to-end tests
+```bash
+ng serve
+```
+## Features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+1. Dark mode - light mode
 
-## Further help
+2. Dynamic UI 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3. Lightly Animated
+
+4. Shareable Link **automatically being copied to clipboard** 
+
+5. snack bar for notifications. 
+
+## UI
+
+<img width="1440" alt="Screen Shot 2020-12-24 at 9 06 43 PM" src="https://user-images.githubusercontent.com/46607090/103117274-ae848c80-4637-11eb-8f25-03ad147836ed.png">
+<img width="1440" alt="Screen Shot 2020-12-24 at 9 07 08 PM" src="https://user-images.githubusercontent.com/46607090/103117278-b04e5000-4637-11eb-9a00-c65c0dc09bd7.png">
+

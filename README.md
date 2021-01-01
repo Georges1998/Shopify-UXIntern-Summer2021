@@ -10,6 +10,10 @@ An app that manages movie nominations for the upcoming Shoppies. Built with **An
 
 Hosted by Netlify: [Demo](https://george-kandalaft-shopify-challenge.netlify.app/)
 
+## some of my favourite movies
+
+[My List](https://george-kandalaft-shopify-challenge.netlify.app/xMxNV6epgV6OpOefyqHU)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

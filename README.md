@@ -1,7 +1,3 @@
-<p align="center">
-<img width="271" alt="Screen Shot 2020-12-24 at 8 44 29 PM" src="https://user-images.githubusercontent.com/46607090/103113557-4333be00-4629-11eb-80d2-ac46db9da89f.png">
-</p>
-
 # The Shoppies
 
 An app that manages movie nominations for the upcoming Shoppies. Built with **Angular** and **Cloud Firestore**.

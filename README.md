@@ -1,4 +1,4 @@
-# The Shoppies
+# The Shoppies 🎬
 
 An app that manages movie nominations for the upcoming Shoppies. Built with **Angular** and **Cloud Firestore**.
 

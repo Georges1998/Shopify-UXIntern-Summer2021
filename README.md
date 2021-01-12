@@ -14,6 +14,10 @@ Hosted by Netlify: [Demo](https://george-kandalaft-shopify-challenge.netlify.app
 
 [My List](https://george-kandalaft-shopify-challenge.netlify.app/xMxNV6epgV6OpOefyqHU)
 
+## Guide
+
+![Guide](https://user-images.githubusercontent.com/46607090/104259986-8c20aa80-5450-11eb-87b1-1608f486dc0b.jpg)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
